@@ -1,0 +1,29 @@
+
+New record:
+2019-12-14 16:58:27
+{"firstname":"Ann","lastname":"Starshova","age":"19","address":"Admirala Makarova street","phone_number":"0990672503","email":"starshovaanna@ukr.net"}
+success
+
+
+New record:
+2019-12-14 17:10:04
+{"firstname":"","lastname":"","age":"111111111111","address":"","phone_number":"","email":""}
+fail
+
+
+New record:
+2019-12-14 17:14:14
+{"firstname":"Vlad","lastname":"Milichenko","age":"18","address":"Kompressornaya street","phone_number":"0990672503","email":"mil-vlad03@mail.ru"}
+success
+
+
+New record:
+2019-12-14 17:15:53
+{"firstname":"","lastname":"","age":"","address":"","phone_number":"","email":""}
+fail
+
+New record:
+2019-12-14 17:17:10
+{"firstname":"Some","lastname":"Company","age":"22","address":"Karl Mark street","phone_number":"0990662503","email":"anastarsova8@gmail.com"}
+success
+

@@ -1,0 +1,87 @@
+<!--
+Уровень 1.
+Доработать форму приведенную в данном файле и написать обработчик этой формы (user_data.php). 
+При нажатии кнопки "Очистить" все поля формы должны становиться незаполненными.
+При нажатии кнопки "Сохранить" данные формы должны быть отправлены в обработчик user_data.php методом POST.
+
+Обработчик должен записать полученные из формы данные в базу данных (MySQL).
+Для этого необходимо создать базу данных и таблицу tab_users.
+Таблица должна иметь такую структуру:
+    1. ID - integer, primary key, autoincrement
+    2. lastname - varchar(100), not null
+    3. firstname - varchar(100), not null
+    4. age - integer, not null
+    5. address - varchar(200), not null
+    6. phone_number - varchar(10), not null
+    7. email - varchar(50), not null
+* Созданную базу данных экспортировать в виде SQL скрипта.
+
+Обработчик офрмить в виде класса, параметры подключения к базе данных - констант этого класса.
+Экземпляр класса должен создаваться также в скрипте-обработчике.
+
+Сохранение записи в базу данных должно логироваться - записываться в файл log.dat
+Строка лога успешного сохранения в БД должна иметь вид:
+    Дата[дд.мм.гггг чч:мм:сс] 
+    Записанные данные[JSON]
+    Результат выполнения SQL запроса[success|fail]
+После сохранения данных в базу данных должна пройти переадресация обратно в форму добавления.
+
+Каждый уровень оформить в отдельный файл(ы) и выложить на GitHub или GitLab. Ссылки прислать на адрес filatov@uft.zp.ua
+Удачи) Будут вопросы - пишете, звоните.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="UTF-8">
+        <title>Данные пользователя</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">        
+    </head>
+    <body>
+        <div class="container">
+            <h3>Данные пользователя</h3>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col"></div>
+                     <form method="POST" action="user_data.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">Имя</label>
+                                <input name="firstname" type="text" class="form-control" id="firstName">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="secondName">Фамилия</label>
+                                <input name="lastname" type="text" class="form-control" id="secondName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Возраст</label>
+                            <input name="age" type="text" class="form-control" id="age" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Адрес</label>
+                            <input name="address" type="text" class="form-control" id="address" placeholder="">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="telNum">Телефон</label>
+                                <input name="phone_number" type="text" class="form-control" id="telNum">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">E-mail</label>
+                                <input name="email" type="email" class="form-control" id="email">
+                            </div>
+                        </div>
+                        <button type="reset" class="btn btn-secondary">Очистить</button>
+                        <button name = "submit" type="submit" class="btn btn-primary">Сохранить</button>
+                    </form> 
+                </div>
+            </div>
+        </div>    
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
